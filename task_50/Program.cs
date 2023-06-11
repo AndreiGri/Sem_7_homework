@@ -14,23 +14,23 @@ Write("Ведите индекс строки массива: ");               
 int row = int.Parse(ReadLine()!);
 Write("Ведите индекс столбца массива: ");
 int col = int.Parse(ReadLine()!);
-NumArray(row, col);                                                             // Объявляем метод 
+NumArray(row, col);                                                              // Объявляем метод 
 
-void NumArray(int r, int c)                                                     // Создаём метод
+void NumArray(int r, int c)                                                      // Создаём метод
 {
-    bool x = false;                                                             // Создаём bool переменную для записи существует ли заявленный элемент в массиве
+    bool x = false;                                                              // Создаём bool переменную для записи существует ли заявленный элемент в массиве
     WriteLine("В массиве: ");
     int[,] array = new int[new Random().Next(2, 11), new Random().Next(2, 11)];  // Создаём массив из случайного кол-ва строк и столбцов
-    for (int i = 0; i < array.GetLength(0); i++)                                  // В цикле записываем случайные числа в элементы массива
+    for (int i = 0; i < array.GetLength(0); i++)                                 // В цикле записываем случайные числа в элементы массива
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
             array[i, j] = new Random().Next(1, 100);
             Write($"{array[i, j]} ");
-            x = i >= r && j >= c ? true : false;                               // Если индексы переменная больше или равны введённым значениям то bool переменная true иначе false 
+            x = i >= r && j >= c ? true : false;                                // Если индексы переменная больше или равны введённым значениям то bool переменная true иначе false 
         }
         WriteLine();
     }
     if (x == true) Write($"Элемент массива array[{r}, {c}] имеет значение {array[r, c]}."); //Выводим сообщение при true
-    else Write($"Элемента array[{r}, {c}] в массиве не существует");                       //Выводим сообщение при false
+    else Write($"Элемента array[{r}, {c}] в массиве не существует");                        //Выводим сообщение при false
 }
